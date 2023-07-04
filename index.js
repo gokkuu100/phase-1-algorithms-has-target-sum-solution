@@ -1,17 +1,36 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = new Set(); // initialize an empty Set
+  for (const number of array) {
+    const complement = target - number;
+
+    // .has returns true if the Set includes the complement
+    if (seenNumbers.has(complement)) return true;
+
+    // .add adds the number to the Set
+    seenNumbers.add(number);
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  time complexity 0(n)
 */
 
 /* 
   Add your pseudocode here
+  initialize set
+  for loop throught itens
+  add number to set
 */
 
 /*
   Add written explanation of your solution here
+  make an empty set
+  write a for loop that will iterate through each element in an array
+  write an if statement which checks if the number to be added is in the set
+  add the number
 */
 
 // You can run `node index.js` to view these console logs
